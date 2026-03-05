@@ -24,22 +24,29 @@ st.markdown("""
     .stApp {
         background-color: #0F1115;
         color: #FFFFFF;
-        font-size: 15px !important;
+        font-family: 'Inter', sans-serif;
     }
-    .stChatMessage, .stChatMessage p, .stChatMessage div {
+    /* Strictly target chat message content for font size */
+    [data-testid="stChatMessageContent"] p,
+    [data-testid="stChatMessageContent"] div,
+    .stMarkdown p,
+    .stMarkdown div {
+        font-size: 15px !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+    }
+    .stChatMessage {
         background-color: #1C2028 !important;
         border-radius: 10px;
         padding: 5px 15px;
         margin-bottom: 5px;
-        font-size: 15px !important;
-        font-weight: 400 !important;
     }
     .stButton button {
         background-color: #00D09C;
         color: white;
         border-radius: 5px;
         border: none;
-        font-size: 15px !important;
+        font-size: 14px !important;
     }
     .stTextInput input {
         background-color: #1C2028;
@@ -70,6 +77,21 @@ retriever, generator = get_tools()
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+# Function to process message
+def process_query(query_text):
+    # Add user message to history
+    st.session_state.messages.append({"role": "user", "content": query_text})
+    
+    # Generate and add assistant response
+    if retriever and generator:
+        try:
+            response = generator.generate_response(query_text)
+            st.session_state.messages.append({"role": "assistant", "content": response})
+        except Exception as e:
+            st.session_state.messages.append({"role": "assistant", "content": f"Error: {e}"})
+    else:
+        st.session_state.messages.append({"role": "assistant", "content": "Tools not ready."})
+
 # Display Chat History
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
@@ -78,7 +100,6 @@ for message in st.session_state.messages:
 # Suggested Questions (Show only if no messages)
 if not st.session_state.messages:
     st.markdown("### Suggested Questions")
-    cols = st.columns(1)
     suggestions = [
         "What is the NAV of HDFC Mid Cap?",
         "What is the exit load for Tata Small Cap?",
@@ -87,31 +108,13 @@ if not st.session_state.messages:
     
     for suggestion in suggestions:
         if st.button(f"🔍 {suggestion}", key=suggestion):
-            st.session_state.messages.append({"role": "user", "content": suggestion})
+            process_query(suggestion)
             st.rerun()
 
 # User Input
 if prompt := st.chat_input("Ex: What is the NAV of HDFC Mid Cap?"):
-    # Add user message to history
-    st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
-        st.markdown(prompt)
-
-    # Generate Response
-    with st.chat_message("assistant"):
-        if retriever and generator:
-            with st.spinner("Thinking..."):
-                try:
-                    # The generator already uses the retriever internally or we can pass it
-                    # Here we use the generator's internal recall logic which uses retrieval
-                    response = generator.generate_response(prompt)
-                    st.markdown(response)
-                    # Add assistant response to history
-                    st.session_state.messages.append({"role": "assistant", "content": response})
-                except Exception as e:
-                    st.error(f"Error generating response: {e}")
-        else:
-            st.error("Tools not initialized properly. Please check your data and API keys.")
+    process_query(prompt)
+    st.rerun()
 
 # Sidebar with Info
 with st.sidebar:
