@@ -28,7 +28,7 @@ class FundRetriever:
                 f"Risk Level: {entry['risk']}. "
                 f"One Year Return: {entry['one_year_return']}. "
                 f"Lock-in Period: {entry['lock_in']}."
-            )
+            ).lower()
             metadata = {
                 "fund_name": entry["fund_name"],
                 "url": entry["url"],
@@ -39,11 +39,12 @@ class FundRetriever:
         # Initialize BM25 retriever (Keyword-based)
         self.retriever = BM25Retriever.from_documents(self.documents)
 
-    def retrieve(self, query, k=2):
+    def retrieve(self, query, k=4):
         """
         Performs keyword-based search to find relevant fund data.
         """
-        # BM25 is very effective for specific fund names and financial terms
+        # Lowercase query for better BM25 matching
+        query = query.lower()
         self.retriever.k = k
         results = self.retriever.invoke(query)
         return results
