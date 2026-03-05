@@ -1,0 +1,13 @@
+{
+    "rewrite_dest": "/api/index",
+    "rewrites": [
+        {
+            "source": "/(chat|static/.*)",
+            "destination": "/api/index"
+        },
+        {
+            "source": "/",
+            "destination": "/api/index"
+        }
+    ]
+}
