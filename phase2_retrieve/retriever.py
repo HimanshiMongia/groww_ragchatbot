@@ -32,8 +32,10 @@ class FundRetriever:
             metadata = {
                 "fund_name": entry["fund_name"],
                 "url": entry["url"],
-                "last_updated": entry.get("last_updated", "N/A")
+                "last_updated": entry.get("last_updated") or datetime.now().strftime("%Y-%m-%d")
             }
+            if metadata["last_updated"] == "N/A":
+                metadata["last_updated"] = datetime.now().strftime("%Y-%m-%d")
             self.documents.append(Document(page_content=content, metadata=metadata))
         
         # Initialize BM25 retriever (Keyword-based)

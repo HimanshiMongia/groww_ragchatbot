@@ -8,8 +8,9 @@
         "min_sip": "₹100",
         "risk": "Very High",
         "one_year_return": "9.18%",
-        "lock_in": "None"
-    }, 
+        "lock_in": "None",
+        "last_updated": "2026-03-06"
+    },
     {
         "fund_name": "HDFC Flexi Cap Direct Plan Growth (HDFC Equity)",
         "url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
@@ -19,7 +20,8 @@
         "min_sip": "₹100",
         "risk": "Very High",
         "one_year_return": "12.85%",
-        "lock_in": "None"
+        "lock_in": "None",
+        "last_updated": "2026-03-06"
     },
     {
         "fund_name": "Tata Small Cap Fund Direct Growth",
@@ -30,7 +32,8 @@
         "min_sip": "₹100",
         "risk": "Very High",
         "one_year_return": "0.42%",
-        "lock_in": "None"
+        "lock_in": "None",
+        "last_updated": "2026-03-06"
     },
     {
         "fund_name": "Motilal Oswal Large and Midcap Fund Direct Growth",
@@ -41,7 +44,8 @@
         "min_sip": "₹500",
         "risk": "Very High",
         "one_year_return": "23.56%",
-        "lock_in": "None"
+        "lock_in": "None",
+        "last_updated": "2026-03-06"
     },
     {
         "fund_name": "SBI ELSS Tax Saver Fund Direct Growth",
@@ -52,7 +56,8 @@
         "min_sip": "₹500",
         "risk": "Very High",
         "one_year_return": "6.11%",
-        "lock_in": "3 Years"
+        "lock_in": "3 Years",
+        "last_updated": "2026-03-06"
     },
     {
         "fund_name": "Kotak Multicap Fund Direct Growth",
@@ -63,7 +68,8 @@
         "min_sip": "₹1000",
         "risk": "Very High",
         "one_year_return": "23.56%",
-        "lock_in": "None"
+        "lock_in": "None",
+        "last_updated": "2026-03-06"
     },
     {
         "fund_name": "ICICI Prudential Retirement Fund Pure Equity Plan Direct Growth",
@@ -74,7 +80,8 @@
         "min_sip": "₹100",
         "risk": "Very High",
         "one_year_return": "16.49%",
-        "lock_in": "5 Years"
+        "lock_in": "5 Years",
+        "last_updated": "2026-03-06"
     },
     {
         "fund_name": "Bajaj Finserv Nifty 50 Index Fund Direct Growth",
@@ -85,6 +92,7 @@
         "min_sip": "₹500",
         "risk": "Very High",
         "one_year_return": "0.00% (New Fund)",
-        "lock_in": "None"
+        "lock_in": "None",
+        "last_updated": "2026-03-06"
     }
 ]
