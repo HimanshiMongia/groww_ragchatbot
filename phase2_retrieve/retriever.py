@@ -45,7 +45,7 @@ class FundRetriever:
         """
         # BM25 is very effective for specific fund names and financial terms
         self.retriever.k = k
-        results = self.retriever.get_relevant_documents(query)
+        results = self.retriever.invoke(query)
         return results
 
 if __name__ == "__main__":
