@@ -40,10 +40,9 @@ async def chat_endpoint(req: ChatRequest):
     except Exception as e:
         return ChatResponse(response=f"Error processing your request: {str(e)}")
 
-# This allows running the file directly
 if __name__ == "__main__":
     import uvicorn
     port = int(os.getenv("PORT", 8001))
-    # Using 127.0.0.1 for local and 0.0.0.0 for cloud via environment variable
     host = "0.0.0.0" if os.getenv("PORT") else "127.0.0.1"
-    uvicorn.run("main:app", host=host, port=port, reload=True)
+    # Pass 'app' directly to avoid module path issues when running from root
+    uvicorn.run(app, host=host, port=port)
