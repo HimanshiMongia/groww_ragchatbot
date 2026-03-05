@@ -1,33 +1,56 @@
 import os
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_chroma import Chroma
+import json
+from langchain_community.retrievers import BM25Retriever
+from langchain_core.documents import Document
 
 # Paths
-DB_DIR = os.path.join(os.path.dirname(__file__), "chroma_db")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_FILE = os.path.join(BASE_DIR, "phase1_ingest", "sample_fund_data.json")
 
 class FundRetriever:
     def __init__(self):
-        if not os.path.exists(DB_DIR):
-            raise Exception("Vector store not found. Please run vector_store.py first.")
+        if not os.path.exists(DATA_FILE):
+            raise Exception(f"Data file not found at {DATA_FILE}. Please run scraper first.")
         
-        self.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-        self.vectorstore = Chroma(
-            persist_directory=DB_DIR,
-            embedding_function=self.embeddings
-        )
+        with open(DATA_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        
+        self.documents = []
+        for entry in data:
+            content = (
+                f"Mutual Fund: {entry['fund_name']}. "
+                f"Current NAV: {entry['nav']}. "
+                f"Expense Ratio: {entry['expense_ratio']}. "
+                f"Exit Load: {entry['exit_load']}. "
+                f"Minimum SIP: {entry['min_sip']}. "
+                f"Risk Level: {entry['risk']}. "
+                f"One Year Return: {entry['one_year_return']}. "
+                f"Lock-in Period: {entry['lock_in']}."
+            )
+            metadata = {
+                "fund_name": entry["fund_name"],
+                "url": entry["url"],
+                "last_updated": entry.get("last_updated", "N/A")
+            }
+            self.documents.append(Document(page_content=content, metadata=metadata))
+        
+        # Initialize BM25 retriever (Keyword-based)
+        self.retriever = BM25Retriever.from_documents(self.documents)
 
-    def retrieve(self, query, k=3):
+    def retrieve(self, query, k=2):
         """
-        Performs semantic search to find relevant fund data.
+        Performs keyword-based search to find relevant fund data.
         """
-        results = self.vectorstore.similarity_search(query, k=k)
+        # BM25 is very effective for specific fund names and financial terms
+        self.retriever.k = k
+        results = self.retriever.get_relevant_documents(query)
         return results
 
 if __name__ == "__main__":
     # Quick test
     try:
         retriever = FundRetriever()
-        query = "What is the exit load for HDFC Mid Cap?"
+        query = "What is the NAV of HDFC Mid Cap?"
         docs = retriever.retrieve(query)
         
         print(f"\nQuery: {query}")
@@ -38,5 +61,4 @@ if __name__ == "__main__":
             print(f"Source: {doc.metadata['url']}")
             print("-" * 10)
     except Exception as e:
-        print(e)
-        print("Tip: Make sure to run 'python phase2_retrieve/vector_store.py' first.")
+        print(f"Error: {e}")

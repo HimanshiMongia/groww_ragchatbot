@@ -3,10 +3,7 @@ uvicorn
 pydantic
 langchain-groq
 python-dotenv
-chromadb
 beautifulsoup4
 playwright
 langchain-community
-langchain-chroma
-langchain-huggingface
-huggingface_hub
+rank_bm25
