@@ -58,6 +58,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("📈 Groww Fund Assistant")
+st.write("Welcome! I'm here to help you with mutual fund data.")
+st.info("💡 **Facts-only. No investment advice.**")
 st.markdown("Ask me anything about Mutual Funds from Groww!")
 
 # Initialize Retriever and Generator
