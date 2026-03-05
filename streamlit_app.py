@@ -24,23 +24,28 @@ st.markdown("""
     .stApp {
         background-color: #0F1115;
         color: #FFFFFF;
+        font-size: 15px !important;
     }
-    .stChatMessage {
+    .stChatMessage, .stChatMessage p, .stChatMessage div {
         background-color: #1C2028 !important;
         border-radius: 10px;
-        padding: 15px;
-        margin-bottom: 10px;
+        padding: 5px 15px;
+        margin-bottom: 5px;
+        font-size: 15px !important;
+        font-weight: 400 !important;
     }
     .stButton button {
         background-color: #00D09C;
         color: white;
         border-radius: 5px;
         border: none;
+        font-size: 15px !important;
     }
     .stTextInput input {
         background-color: #1C2028;
         color: white;
         border: 1px solid #2E3440;
+        font-size: 15px !important;
     }
     </style>
 """, unsafe_allow_html=True)
