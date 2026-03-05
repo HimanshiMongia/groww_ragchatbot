@@ -26,14 +26,17 @@ st.markdown("""
         color: #FFFFFF;
         font-family: 'Inter', sans-serif;
     }
-    /* Strictly target chat message content for font size */
-    [data-testid="stChatMessageContent"] p,
-    [data-testid="stChatMessageContent"] div,
-    .stMarkdown p,
-    .stMarkdown div {
+    /* Force every single element inside a chat message to 15px */
+    [data-testid="stChatMessageContent"],
+    [data-testid="stChatMessageContent"] * {
         font-size: 15px !important;
         font-weight: 400 !important;
-        line-height: 1.5 !important;
+        line-height: 1.6 !important;
+    }
+    /* Ensure bold text stays bold but correct size */
+    [data-testid="stChatMessageContent"] strong,
+    [data-testid="stChatMessageContent"] b {
+        font-weight: 700 !important;
     }
     .stChatMessage {
         background-color: #1C2028 !important;
