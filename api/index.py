@@ -1,13 +1,15 @@
 import os
 import sys
 
-# Add the project root and all phase directories to the path so internal imports work
+# Add the project root to sys.path
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(base_dir)
-sys.path.append(os.path.join(base_dir, 'phase3_generate'))
-sys.path.append(os.path.join(base_dir, 'phase4_chat_app'))
+if base_dir not in sys.path:
+    sys.path.append(base_dir)
 
-from phase4_chat_app.main import app
-
-# Vercel looks for the 'app' or 'handler' variable
-handler = app
+# Import the app using absolute project path
+try:
+    from phase4_chat_app.main import app
+    handler = app
+except Exception as e:
+    print(f"CRITICAL ERROR during app initialization: {e}")
+    raise e

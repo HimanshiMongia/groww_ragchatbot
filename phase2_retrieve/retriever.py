@@ -4,7 +4,9 @@ from langchain_community.retrievers import BM25Retriever
 from langchain_core.documents import Document
 
 # Paths
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Use more robust path resolution for serverless environments
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(CURRENT_DIR)
 DATA_FILE = os.path.join(BASE_DIR, "phase1_ingest", "sample_fund_data.json")
 
 class FundRetriever:

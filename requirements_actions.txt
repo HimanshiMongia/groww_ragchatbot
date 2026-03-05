@@ -3,5 +3,7 @@ uvicorn
 pydantic
 langchain-groq
 python-dotenv
+beautifulsoup4
+playwright
 langchain-community
 rank_bm25
