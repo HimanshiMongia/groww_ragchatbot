@@ -38,9 +38,8 @@ class FundGenerator:
             "4. NO PII: Do not accept or store PAN, Aadhaar, account numbers, etc.\n"
             "5. LENGTH: Max 2-3 concise sentences.\n"
             "6. FORMATTING: BOLD ALL specific numerical values (e.g., '**₹220.177**', '**1.0%**', '**High**').\n"
-            "7. FOOTER: Your response MUST end with:\n"
-            "---\n"
-            "**Source:** [Citation Link] • Last updated: {last_updated}\n\n"
+            "7. FOOTER: Your response MUST end with exactly this HTML structure:\n"
+            "<hr><div class='source-footer'>**Source:** [Citation Link] • Last updated: {last_updated}</div>\n\n"
             "Context:\n{context}"
         )
 

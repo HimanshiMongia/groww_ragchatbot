@@ -38,6 +38,11 @@ st.markdown("""
     [data-testid="stChatMessageContent"] b {
         font-weight: 700 !important;
     }
+    /* Smaller size for Source and Last Updated */
+    .source-footer, .source-footer * {
+        font-size: 12px !important;
+        color: #9CA3AF !important;
+    }
     .stChatMessage {
         background-color: #1C2028 !important;
         border-radius: 10px;
@@ -100,7 +105,7 @@ def process_query(query_text):
 # Display Chat History
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+        st.markdown(message["content"], unsafe_allow_html=True)
 
 # Suggested Questions (Show only if no messages)
 if not st.session_state.messages:
