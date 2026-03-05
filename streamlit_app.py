@@ -70,6 +70,21 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
+# Suggested Questions (Show only if no messages)
+if not st.session_state.messages:
+    st.markdown("### Suggested Questions")
+    cols = st.columns(1)
+    suggestions = [
+        "What is the NAV of HDFC Mid Cap?",
+        "What is the exit load for Tata Small Cap?",
+        "What is the risk level of SBI ELSS?"
+    ]
+    
+    for suggestion in suggestions:
+        if st.button(f"🔍 {suggestion}", key=suggestion):
+            st.session_state.messages.append({"role": "user", "content": suggestion})
+            st.rerun()
+
 # User Input
 if prompt := st.chat_input("Ex: What is the NAV of HDFC Mid Cap?"):
     # Add user message to history
