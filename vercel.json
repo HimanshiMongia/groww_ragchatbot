@@ -1,4 +1,11 @@
 {
+    "version": 2,
+    "functions": {
+        "api/index.py": {
+            "runtime": "python3.10",
+            "includeFiles": "{phase1_ingest,phase2_retrieve,phase3_generate,phase4_chat_app}/**"
+        }
+    },
     "rewrites": [
         {
             "source": "/(.*)",
