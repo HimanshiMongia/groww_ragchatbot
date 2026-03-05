@@ -40,6 +40,7 @@ class FundRetriever:
         
         # Initialize BM25 retriever (Keyword-based)
         self.retriever = BM25Retriever.from_documents(self.documents)
+        self.data_file_path = DATA_FILE
 
     def retrieve(self, query, k=4):
         """

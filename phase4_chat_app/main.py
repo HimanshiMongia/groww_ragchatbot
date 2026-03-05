@@ -32,6 +32,15 @@ app.mount("/static", StaticFiles(directory=static_dir), name="static")
 async def read_index():
     return FileResponse(os.path.join(static_dir, "index.html"))
 
+@app.get("/status")
+async def get_status():
+    return {
+        "status": "online",
+        "funds_loaded": len(generator.retriever.documents),
+        "data_file_exists": os.path.exists(generator.retriever.data_file_path),
+        "last_updated_sample": generator.retriever.documents[0].metadata.get("last_updated") if generator.retriever.documents else "None"
+    }
+
 @app.post("/chat", response_model=ChatResponse)
 async def chat_endpoint(req: ChatRequest):
     try:
