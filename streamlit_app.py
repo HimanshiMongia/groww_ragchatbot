@@ -31,7 +31,7 @@ st.markdown("""
     [data-testid="stChatMessageContent"] div,
     .stMarkdown p,
     .stMarkdown div {
-        font-size: 12px !important;
+        font-size: 15px !important;
         font-weight: 400 !important;
         line-height: 1.5 !important;
     }
@@ -46,13 +46,13 @@ st.markdown("""
         color: white;
         border-radius: 5px;
         border: none;
-        font-size: 12px !important;
+        font-size: 14px !important;
     }
     .stTextInput input {
         background-color: #1C2028;
         color: white;
         border: 1px solid #2E3440;
-        font-size: 12px !important;
+        font-size: 15px !important;
     }
     </style>
 """, unsafe_allow_html=True)
