@@ -82,9 +82,23 @@ def get_tools():
 
 retriever, generator = get_tools()
 
-# Session State for History
+# Session State for History and Suggestions
 if "messages" not in st.session_state:
     st.session_state.messages = []
+if "current_suggestions" not in st.session_state:
+    question_pool = [
+        "What is the NAV of HDFC Mid Cap?",
+        "What is the exit load for Tata Small Cap?",
+        "What is the risk level of SBI ELSS?",
+        "What is the minimum SIP for Kotak Multicap?",
+        "Does HDFC Flexi Cap have a lock-in period?",
+        "What is the 1-year return for Motilal Oswal Large and Midcap?",
+        "What is the expense ratio of ICICI Prudential Retirement Fund?",
+        "What is the risk category for Bajaj Finserv Nifty 50?",
+        "What is the current NAV of SBI ELSS Tax Saver?",
+        "What is the exit load for HDFC Flexi Cap?"
+    ]
+    st.session_state.current_suggestions = random.sample(question_pool, 3)
 
 # Display Chat History
 for message in st.session_state.messages:
@@ -100,39 +114,35 @@ if st.session_state.messages and st.session_state.messages[-1]["role"] == "user"
                 if retriever and generator:
                     response = generator.generate_response(user_query)
                     st.session_state.messages.append({"role": "assistant", "content": response})
+                    
+                    # Refresh suggestions for the next turn
+                    question_pool = [
+                        "What is the NAV of HDFC Mid Cap?", "What is the exit load for Tata Small Cap?",
+                        "What is the risk level of SBI ELSS?", "What is the minimum SIP for Kotak Multicap?",
+                        "Does HDFC Flexi Cap have a lock-in period?", "What is the 1-year return for Motilal Oswal Large and Midcap?",
+                        "What is the expense ratio of ICICI Prudential Retirement Fund?", "What is the risk category for Bajaj Finserv Nifty 50?",
+                        "What is the current NAV of SBI ELSS Tax Saver?", "What is the exit load for HDFC Flexi Cap?"
+                    ]
+                    st.session_state.current_suggestions = random.sample(question_pool, 3)
                     st.rerun()
                 else:
                     st.error("Tools not ready.")
             except Exception as e:
                 st.error(f"Error generating response: {e}")
 
-# Suggested Questions Block
-st.markdown("### Suggested Questions")
-question_pool = [
-    "What is the NAV of HDFC Mid Cap?",
-    "What is the exit load for Tata Small Cap?",
-    "What is the risk level of SBI ELSS?",
-    "What is the minimum SIP for Kotak Multicap?",
-    "Does HDFC Flexi Cap have a lock-in period?",
-    "What is the 1-year return for Motilal Oswal Large and Midcap?",
-    "What is the expense ratio of ICICI Prudential Retirement Fund?",
-    "What is the risk category for Bajaj Finserv Nifty 50?",
-    "What is the current NAV of SBI ELSS Tax Saver?",
-    "What is the exit load for HDFC Flexi Cap?"
-]
+# Only show suggestions and input if the assistant is not currently thinking (last msg != user)
+if not st.session_state.messages or st.session_state.messages[-1]["role"] == "assistant":
+    # Suggested Questions Block
+    st.markdown("### Suggested Questions")
+    for suggestion in st.session_state.current_suggestions:
+        if st.button(f"🔍 {suggestion}", key=f"sug_{suggestion}"):
+            st.session_state.messages.append({"role": "user", "content": suggestion})
+            st.rerun()
 
-# Randomize suggestions (pick 3)
-current_suggestions = random.sample(question_pool, 3)
-
-for suggestion in current_suggestions:
-    if st.button(f"🔍 {suggestion}", key=f"btn_{suggestion}"):
-        st.session_state.messages.append({"role": "user", "content": suggestion})
+    # User Input
+    if prompt := st.chat_input("Ex: What is the NAV of HDFC Mid Cap?"):
+        st.session_state.messages.append({"role": "user", "content": prompt})
         st.rerun()
-
-# User Input
-if prompt := st.chat_input("Ex: What is the NAV of HDFC Mid Cap?"):
-    st.session_state.messages.append({"role": "user", "content": prompt})
-    st.rerun()
 
 # Sidebar with Info
 with st.sidebar:
@@ -141,4 +151,7 @@ with st.sidebar:
     st.info("This assistant uses Groww's real-time fund data and Groq LLM.")
     if st.button("Clear Chat"):
         st.session_state.messages = []
+        # Reset suggestions on clear
+        question_pool = ["What is the NAV of HDFC Mid Cap?", "What is the exit load for Tata Small Cap?", "What is the risk level of SBI ELSS?", "What is the minimum SIP for Kotak Multicap?", "Does HDFC Flexi Cap have a lock-in period?", "What is the 1-year return for Motilal Oswal Large and Midcap?", "What is the expense ratio of ICICI Prudential Retirement Fund?", "What is the risk category for Bajaj Finserv Nifty 50?", "What is the current NAV of SBI ELSS Tax Saver?", "What is the exit load for HDFC Flexi Cap?"]
+        st.session_state.current_suggestions = random.sample(question_pool, 3)
         st.rerun()
