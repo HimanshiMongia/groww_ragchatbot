@@ -22,8 +22,6 @@ st.set_page_config(
 st.markdown("""
     <style>
     .stApp {
-        background-color: #0F1115;
-        color: #FFFFFF;
         font-family: 'Inter', sans-serif;
     }
     /* Force every single element inside a chat message to 15px */
@@ -41,25 +39,25 @@ st.markdown("""
     /* Smaller size for Source and Last Updated */
     .source-footer, .source-footer * {
         font-size: 12px !important;
-        color: #9CA3AF !important;
+        opacity: 0.8;
     }
+    /* Adaptive chat message background */
     .stChatMessage {
-        background-color: #1C2028 !important;
         border-radius: 10px;
         padding: 5px 15px;
         margin-bottom: 5px;
+        border: 1px solid rgba(128, 128, 128, 0.1);
     }
     .stButton button {
-        background-color: #00D09C;
-        color: white;
+        background-color: #00D09C !important;
+        color: white !important;
         border-radius: 5px;
         border: none;
         font-size: 14px !important;
     }
+    /* Allow text input to follow theme */
     .stTextInput input {
-        background-color: #1C2028;
-        color: white;
-        border: 1px solid #2E3440;
+        border-radius: 5px;
         font-size: 15px !important;
     }
     </style>
