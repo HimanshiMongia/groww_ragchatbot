@@ -105,19 +105,19 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"], unsafe_allow_html=True)
 
-# Suggested Questions (Show only if no messages)
-if not st.session_state.messages:
-    st.markdown("### Suggested Questions")
-    suggestions = [
-        "What is the NAV of HDFC Mid Cap?",
-        "What is the exit load for Tata Small Cap?",
-        "What is the risk level of SBI ELSS?"
-    ]
-    
-    for suggestion in suggestions:
-        if st.button(f"🔍 {suggestion}", key=suggestion):
-            process_query(suggestion)
-            st.rerun()
+# Suggested Questions
+st.markdown("### Suggested Questions")
+suggestions = [
+    "What is the NAV of HDFC Mid Cap?",
+    "What is the exit load for Tata Small Cap?",
+    "What is the risk level of SBI ELSS?"
+]
+
+# Use columns to show buttons side-by-side or stacked as per space
+for suggestion in suggestions:
+    if st.button(f"🔍 {suggestion}", key=f"sug_{suggestion}"):
+        process_query(suggestion)
+        st.rerun()
 
 # User Input
 if prompt := st.chat_input("Ex: What is the NAV of HDFC Mid Cap?"):
