@@ -86,27 +86,27 @@ retriever, generator = get_tools()
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Function to process message
-def process_query(query_text):
-    # Add user message to history
-    st.session_state.messages.append({"role": "user", "content": query_text})
-    
-    # Generate and add assistant response
-    if retriever and generator:
-        try:
-            response = generator.generate_response(query_text)
-            st.session_state.messages.append({"role": "assistant", "content": response})
-        except Exception as e:
-            st.session_state.messages.append({"role": "assistant", "content": f"Error: {e}"})
-    else:
-        st.session_state.messages.append({"role": "assistant", "content": "Tools not ready."})
-
 # Display Chat History
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"], unsafe_allow_html=True)
 
-# Suggested Questions
+# Generate Assistant Response (if last message is from user)
+if st.session_state.messages and st.session_state.messages[-1]["role"] == "user":
+    with st.chat_message("assistant"):
+        with st.spinner("Thinking..."):
+            try:
+                user_query = st.session_state.messages[-1]["content"]
+                if retriever and generator:
+                    response = generator.generate_response(user_query)
+                    st.session_state.messages.append({"role": "assistant", "content": response})
+                    st.rerun()
+                else:
+                    st.error("Tools not ready.")
+            except Exception as e:
+                st.error(f"Error generating response: {e}")
+
+# Suggested Questions Block
 st.markdown("### Suggested Questions")
 question_pool = [
     "What is the NAV of HDFC Mid Cap?",
@@ -121,17 +121,17 @@ question_pool = [
     "What is the exit load for HDFC Flexi Cap?"
 ]
 
-# Randomly pick 3 unique questions for this interaction
+# Randomize suggestions (pick 3)
 current_suggestions = random.sample(question_pool, 3)
 
 for suggestion in current_suggestions:
-    if st.button(f"🔍 {suggestion}", key=f"sug_{suggestion}"):
-        process_query(suggestion)
+    if st.button(f"🔍 {suggestion}", key=f"btn_{suggestion}"):
+        st.session_state.messages.append({"role": "user", "content": suggestion})
         st.rerun()
 
 # User Input
 if prompt := st.chat_input("Ex: What is the NAV of HDFC Mid Cap?"):
-    process_query(prompt)
+    st.session_state.messages.append({"role": "user", "content": prompt})
     st.rerun()
 
 # Sidebar with Info
