@@ -1,6 +1,16 @@
-# Groww RAG Chatbot
-
 An AI-powered investment assistant that provides factual information about mutual funds using Retrieval-Augmented Generation (RAG). The chatbot is designed to look and feel like the Groww app while ensuring data accuracy and compliance with investment advice restrictions.
+
+### 🔗 Deployed Chatbot
+**[https://growwragchatbot-git.streamlit.app/](https://growwragchatbot-git.streamlit.app/)**
+
+---
+
+### ⚠️ Disclaimer
+This assistant provides factual information about mutual funds using official public sources. 
+**It does NOT provide investment advice.** 
+Please consult a financial advisor before making investment decisions.
+
+---
 
 ## 🚀 Setup Instructions
 
@@ -58,6 +68,13 @@ The assistant provides details for various scheme types, including:
 
 ---
 
+## 📊 Data & Sources
+The assistant relies on public data from official fund pages. 
+- **Source URLs**: A complete list of tracked funds and their original URLs can be found in [source_urls.csv](source_urls.csv).
+- **Update Frequency**: Data is refreshed daily via automated GitHub Actions.
+
+---
+
 ## ⚠️ Known Limitations
 
 1. **Facts-Only Assistant**: The agent is strictly constrained to prevent investment advice. It cannot answer questions like "Should I buy X?" or "Is Y a good investment?".
@@ -74,3 +91,5 @@ The assistant provides details for various scheme types, including:
 - `phase3_generate`: LLM response generation (LangChain + Groq).
 - `phase4_chat_app`: FastAPI web application and Groww-themed UI.
 - `phase5_scheduler`: Placeholder for automated update scheduling.
+- `source_urls.csv`: Official public URLs for all indexed mutual funds.
+- `sample_qa.md`: Example queries and assistant response documentation.
