@@ -1,6 +1,6 @@
-import streamlit as st
 import os
 import sys
+import random
 from datetime import datetime
 
 # Add phase directories to path
@@ -107,14 +107,23 @@ for message in st.session_state.messages:
 
 # Suggested Questions
 st.markdown("### Suggested Questions")
-suggestions = [
+question_pool = [
     "What is the NAV of HDFC Mid Cap?",
     "What is the exit load for Tata Small Cap?",
-    "What is the risk level of SBI ELSS?"
+    "What is the risk level of SBI ELSS?",
+    "What is the minimum SIP for Kotak Multicap?",
+    "Does HDFC Flexi Cap have a lock-in period?",
+    "What is the 1-year return for Motilal Oswal Large and Midcap?",
+    "What is the expense ratio of ICICI Prudential Retirement Fund?",
+    "What is the risk category for Bajaj Finserv Nifty 50?",
+    "What is the current NAV of SBI ELSS Tax Saver?",
+    "What is the exit load for HDFC Flexi Cap?"
 ]
 
-# Use columns to show buttons side-by-side or stacked as per space
-for suggestion in suggestions:
+# Randomly pick 3 unique questions for this interaction
+current_suggestions = random.sample(question_pool, 3)
+
+for suggestion in current_suggestions:
     if st.button(f"🔍 {suggestion}", key=f"sug_{suggestion}"):
         process_query(suggestion)
         st.rerun()
