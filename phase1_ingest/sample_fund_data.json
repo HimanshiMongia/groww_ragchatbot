@@ -9,7 +9,7 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "None",
-    "last_updated": "2026-04-03"
+    "last_updated": "2026-04-04"
   },
   {
     "fund_name": "HDFC Flexi Cap Direct Plan Growth",
@@ -21,7 +21,7 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "None",
-    "last_updated": "2026-04-03"
+    "last_updated": "2026-04-04"
   },
   {
     "fund_name": "Tata Small Cap Fund Direct Growth",
@@ -33,19 +33,19 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "None",
-    "last_updated": "2026-04-03"
+    "last_updated": "2026-04-04"
   },
   {
-    "fund_name": "Motilal Oswal Large and Midcap Fund Direct Growth",
+    "fund_name": "N/A",
     "url": "https://groww.in/mutual-funds/motilal-oswal-large-and-midcap-fund-direct-growth",
-    "nav": "Motilal Oswal Large and Midcap Fund Direct Growth is a Equity Mutual Fund Scheme launched by Motilal Oswal Mutual Fund. This scheme was made available to investors on 28 Dec 2009. Swapnil P Mayekar is the Current Fund Manager of Motilal Oswal Large and Midcap Fund Direct Growth fund. The fund currently has an Asset Under Management(AUM) of \u20b91,35,167 Cr and the Latest  as of 02 Apr 2026 is \u20b933.29.\nThe Motilal Oswal Large and Midcap Fund Direct Growth is rated Moderately High risk. Minimum SIP Investment is set to \u20b9500. Minimum Lumpsum Investment is \u20b9500. Exit load of 1%, if redeemed within 365 days.\n...Read more",
+    "nav": "N/A",
     "expense_ratio": "N/A",
     "exit_load": "N/A",
     "min_sip": "N/A",
-    "risk": "Filter funds based on risk, fund size and more",
-    "one_year_return": "All",
+    "risk": "N/A",
+    "one_year_return": "N/A",
     "lock_in": "None",
-    "last_updated": "2026-04-03"
+    "last_updated": "2026-04-04"
   },
   {
     "fund_name": "SBI ELSS Tax Saver Fund Direct Growth",
@@ -57,7 +57,7 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "3 Years",
-    "last_updated": "2026-04-03"
+    "last_updated": "2026-04-04"
   },
   {
     "fund_name": "Kotak Multicap Fund Direct Growth",
@@ -69,19 +69,19 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "None",
-    "last_updated": "2026-04-03"
+    "last_updated": "2026-04-04"
   },
   {
-    "fund_name": "ICICI Prudential Retirement Fund Pure Equity Plan Direct Growth",
+    "fund_name": "N/A",
     "url": "https://groww.in/mutual-funds/icici-prudential-retirement-fund-pure-equity-plan-direct-growth",
-    "nav": "ICICI Prudential Retirement Fund Pure Equity Plan Direct Growth is a Equity Mutual Fund Scheme launched by ICICI Prudential Mutual Fund. This scheme was made available to investors on 11 Oct 1993. Sharmila D'Silva is the Current Fund Manager of ICICI Prudential Retirement Fund Pure Equity Plan Direct Growth fund. The fund currently has an Asset Under Management(AUM) of \u20b911,24,266 Cr and the Latest  as of 01 Apr 2026 is \u20b934.73.\nThe ICICI Prudential Retirement Fund Pure Equity Plan Direct Growth is rated Moderately High risk. Minimum SIP Investment is set to \u20b9100. Minimum Lumpsum Investment is \u20b95,000. \n...Read more",
+    "nav": "N/A",
     "expense_ratio": "N/A",
     "exit_load": "N/A",
     "min_sip": "N/A",
-    "risk": "Filter funds based on risk, fund size and more",
-    "one_year_return": "All",
-    "lock_in": "5 Years (or age 60)",
-    "last_updated": "2026-04-03"
+    "risk": "N/A",
+    "one_year_return": "N/A",
+    "lock_in": "None",
+    "last_updated": "2026-04-04"
   },
   {
     "fund_name": "Bajaj Finserv Nifty 50 Index Fund Direct Growth",
@@ -93,6 +93,6 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "N/A",
     "lock_in": "None",
-    "last_updated": "2026-04-03"
+    "last_updated": "2026-04-04"
   }
 ]
