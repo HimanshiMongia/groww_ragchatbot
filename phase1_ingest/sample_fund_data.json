@@ -9,19 +9,19 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "None",
-    "last_updated": "2026-04-04"
+    "last_updated": "2026-04-05"
   },
   {
     "fund_name": "HDFC Flexi Cap Direct Plan Growth",
     "url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
-    "nav": "HDFC Flexi Cap Direct Plan Growth is a Equity Mutual Fund Scheme launched by HDFC Mutual Fund. This scheme was made available to investors on 09 Dec 1999. Amit Ganatra is the Current Fund Manager of HDFC Flexi Cap Direct Plan Growth fund. The fund currently has an Asset Under Management(AUM) of \u20b99,52,320 Cr and the Latest  as of 02 Apr 2026 is \u20b92,030.11.\nThe HDFC Flexi Cap Direct Plan Growth is rated Very High risk. Minimum SIP Investment is set to \u20b9100. Minimum Lumpsum Investment is \u20b9100. Exit load of 1% if redeemed within 1 year\r\n\n...Read more",
+    "nav": "N/A",
     "expense_ratio": "N/A",
     "exit_load": "N/A",
     "min_sip": "N/A",
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "None",
-    "last_updated": "2026-04-04"
+    "last_updated": "2026-04-05"
   },
   {
     "fund_name": "Tata Small Cap Fund Direct Growth",
@@ -33,19 +33,19 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "None",
-    "last_updated": "2026-04-04"
+    "last_updated": "2026-04-05"
   },
   {
-    "fund_name": "N/A",
+    "fund_name": "Motilal Oswal Large and Midcap Fund Direct Growth",
     "url": "https://groww.in/mutual-funds/motilal-oswal-large-and-midcap-fund-direct-growth",
-    "nav": "N/A",
+    "nav": "Motilal Oswal Large and Midcap Fund Direct Growth is a Equity Mutual Fund Scheme launched by Motilal Oswal Mutual Fund. This scheme was made available to investors on 28 Dec 2009. Swapnil P Mayekar is the Current Fund Manager of Motilal Oswal Large and Midcap Fund Direct Growth fund. The fund currently has an Asset Under Management(AUM) of \u20b91,35,167 Cr and the Latest  as of 02 Apr 2026 is \u20b933.29.\nThe Motilal Oswal Large and Midcap Fund Direct Growth is rated Moderately High risk. Minimum SIP Investment is set to \u20b9500. Minimum Lumpsum Investment is \u20b9500. Exit load of 1%, if redeemed within 365 days.\n...Read more",
     "expense_ratio": "N/A",
     "exit_load": "N/A",
     "min_sip": "N/A",
-    "risk": "N/A",
-    "one_year_return": "N/A",
+    "risk": "Filter funds based on risk, fund size and more",
+    "one_year_return": "All",
     "lock_in": "None",
-    "last_updated": "2026-04-04"
+    "last_updated": "2026-04-05"
   },
   {
     "fund_name": "SBI ELSS Tax Saver Fund Direct Growth",
@@ -57,31 +57,31 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "3 Years",
-    "last_updated": "2026-04-04"
+    "last_updated": "2026-04-05"
   },
   {
     "fund_name": "Kotak Multicap Fund Direct Growth",
     "url": "https://groww.in/mutual-funds/kotak-multicap-fund-direct-growth",
-    "nav": "Kotak Multicap Fund Direct Growth is a Equity Mutual Fund Scheme launched by Kotak Mahindra Mutual Fund. This scheme was made available to investors on 04 Aug 1994. Abhishek Bisen is the Current Fund Manager of Kotak Multicap Fund Direct Growth fund. The fund currently has an Asset Under Management(AUM) of \u20b95,95,414 Cr and the Latest  as of 02 Apr 2026 is \u20b919.08.\nThe Kotak Multicap Fund Direct Growth is rated Very High risk. Minimum SIP Investment is set to \u20b9100. Minimum Lumpsum Investment is \u20b9100. Exit load for units in excess of 10% of the investment,1% will be charged for redemption within 1 year.\n...Read more",
+    "nav": "N/A",
     "expense_ratio": "N/A",
     "exit_load": "N/A",
     "min_sip": "N/A",
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "None",
-    "last_updated": "2026-04-04"
+    "last_updated": "2026-04-05"
   },
   {
-    "fund_name": "N/A",
+    "fund_name": "ICICI Prudential Retirement Fund Pure Equity Plan Direct Growth",
     "url": "https://groww.in/mutual-funds/icici-prudential-retirement-fund-pure-equity-plan-direct-growth",
     "nav": "N/A",
     "expense_ratio": "N/A",
     "exit_load": "N/A",
     "min_sip": "N/A",
-    "risk": "N/A",
-    "one_year_return": "N/A",
-    "lock_in": "None",
-    "last_updated": "2026-04-04"
+    "risk": "Filter funds based on risk, fund size and more",
+    "one_year_return": "All",
+    "lock_in": "5 Years (or age 60)",
+    "last_updated": "2026-04-05"
   },
   {
     "fund_name": "Bajaj Finserv Nifty 50 Index Fund Direct Growth",
@@ -93,6 +93,6 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "N/A",
     "lock_in": "None",
-    "last_updated": "2026-04-04"
+    "last_updated": "2026-04-05"
   }
 ]
