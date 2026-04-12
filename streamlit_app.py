@@ -65,6 +65,90 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("📈 Groww Fund Assistant")
+
+st.markdown("""
+<style>
+.product-context {
+    background-color: #ffffff;
+    padding: 24px 32px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    border-left: 6px solid #00D09C;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.product-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.product-desc {
+    font-size: 1rem;
+    color: #4b5563;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.context-heading {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+
+.context-list {
+    margin: 0;
+    padding-left: 18px;
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.context-list li {
+    margin-bottom: 6px;
+}
+</style>
+
+<div class="product-context">
+    <div class="product-title">AI-Powered Investment Assistant: Balancing Helpfulness and Financial Safety</div>
+    <div class="product-desc">A controlled AI assistant that helps users explore mutual fund information while avoiding unsafe financial advice.</div>
+    
+    <div class="section-grid">
+        <div>
+            <div class="context-heading">Problem Context</div>
+            <ul class="context-list">
+                <li>Users often seek investment advice through chat interfaces</li>
+                <li>Direct AI-generated advice can be risky and misleading</li>
+                <li>There is a need for a system that is helpful but safe</li>
+            </ul>
+        </div>
+        <div>
+            <div class="context-heading">Key Features</div>
+            <ul class="context-list">
+                <li>Provides factual, knowledge-based responses only</li>
+                <li>Avoids answering advisory or opinion-based questions</li>
+                <li>Shows source of information with each response</li>
+                <li>Redirects users to relevant resources when needed</li>
+            </ul>
+        </div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+st.divider()
+
 st.write("Welcome! I'm here to help you with mutual fund data.")
 st.info("💡 **Facts-only. No investment advice.**")
 st.markdown("Ask me anything about Mutual Funds from Groww!")
