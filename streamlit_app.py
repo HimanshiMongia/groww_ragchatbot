@@ -122,28 +122,28 @@ st.markdown("""
 </style>
 
 <div class="product-context">
-    <div class="product-title">AI-Powered Investment Assistant: Balancing Helpfulness and Financial Safety</div>
-    <div class="product-desc">A controlled AI assistant that helps users explore mutual fund information while avoiding unsafe financial advice.</div>
-    
-    <div class="section-grid">
-        <div>
-            <div class="context-heading">Problem Context</div>
-            <ul class="context-list">
-                <li>Users often seek investment advice through chat interfaces</li>
-                <li>Direct AI-generated advice can be risky and misleading</li>
-                <li>There is a need for a system that is helpful but safe</li>
-            </ul>
-        </div>
-        <div>
-            <div class="context-heading">Key Features</div>
-            <ul class="context-list">
-                <li>Provides factual, knowledge-based responses only</li>
-                <li>Avoids answering advisory or opinion-based questions</li>
-                <li>Shows source of information with each response</li>
-                <li>Redirects users to relevant resources when needed</li>
-            </ul>
-        </div>
-    </div>
+<div class="product-title">AI-Powered Investment Assistant: Balancing Helpfulness and Financial Safety</div>
+<div class="product-desc">A controlled AI assistant that helps users explore mutual fund information while avoiding unsafe financial advice.</div>
+
+<div class="section-grid">
+<div>
+<div class="context-heading">Problem Context</div>
+<ul class="context-list">
+<li>Users often seek investment advice through chat interfaces</li>
+<li>Direct AI-generated advice can be risky and misleading</li>
+<li>There is a need for a system that is helpful but safe</li>
+</ul>
+</div>
+<div>
+<div class="context-heading">Key Features</div>
+<ul class="context-list">
+<li>Provides factual, knowledge-based responses only</li>
+<li>Avoids answering advisory or opinion-based questions</li>
+<li>Shows source of information with each response</li>
+<li>Redirects users to relevant resources when needed</li>
+</ul>
+</div>
+</div>
 </div>
 """, unsafe_allow_html=True)
 
