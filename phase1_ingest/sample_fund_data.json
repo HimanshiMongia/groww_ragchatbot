@@ -9,7 +9,7 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "None",
-    "last_updated": "2026-05-02"
+    "last_updated": "2026-05-03"
   },
   {
     "fund_name": "HDFC Flexi Cap Direct Plan Growth",
@@ -21,7 +21,7 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "None",
-    "last_updated": "2026-05-02"
+    "last_updated": "2026-05-03"
   },
   {
     "fund_name": "Tata Small Cap Fund Direct Growth",
@@ -33,7 +33,7 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "None",
-    "last_updated": "2026-05-02"
+    "last_updated": "2026-05-03"
   },
   {
     "fund_name": "Motilal Oswal Large and Midcap Fund Direct Growth",
@@ -45,7 +45,7 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "None",
-    "last_updated": "2026-05-02"
+    "last_updated": "2026-05-03"
   },
   {
     "fund_name": "SBI ELSS Tax Saver Fund Direct Growth",
@@ -57,7 +57,7 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "3 Years",
-    "last_updated": "2026-05-02"
+    "last_updated": "2026-05-03"
   },
   {
     "fund_name": "Kotak Multicap Fund Direct Growth",
@@ -69,19 +69,19 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "None",
-    "last_updated": "2026-05-02"
+    "last_updated": "2026-05-03"
   },
   {
     "fund_name": "ICICI Prudential Retirement Fund Pure Equity Plan Direct Growth",
     "url": "https://groww.in/mutual-funds/icici-prudential-retirement-fund-pure-equity-plan-direct-growth",
-    "nav": "ICICI Prudential Retirement Fund Pure Equity Plan Direct Growth is a Equity Mutual Fund Scheme launched by ICICI Prudential Mutual Fund. This scheme was made available to investors on 11 Oct 1993. Rohit Lakhotia is the Current Fund Manager of ICICI Prudential Retirement Fund Pure Equity Plan Direct Growth fund. The fund currently has an Asset Under Management(AUM) of \u20b910,24,916 Cr and the Latest  as of 30 Apr 2026 is \u20b938.20.\nThe ICICI Prudential Retirement Fund Pure Equity Plan Direct Growth is rated Very High risk. Minimum SIP Investment is set to \u20b9100. Minimum Lumpsum Investment is \u20b95,000. \n...Read more",
+    "nav": "N/A",
     "expense_ratio": "N/A",
     "exit_load": "N/A",
     "min_sip": "N/A",
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "All",
     "lock_in": "5 Years (or age 60)",
-    "last_updated": "2026-05-02"
+    "last_updated": "2026-05-03"
   },
   {
     "fund_name": "Bajaj Finserv Nifty 50 Index Fund Direct Growth",
@@ -93,6 +93,6 @@
     "risk": "Filter funds based on risk, fund size and more",
     "one_year_return": "N/A",
     "lock_in": "None",
-    "last_updated": "2026-05-02"
+    "last_updated": "2026-05-03"
   }
 ]
